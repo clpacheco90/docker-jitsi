@@ -5,7 +5,7 @@ RUN apt-get -y update \
       dnsutils nginx bash pwgen
 
 RUN wget -qO - https://download.jitsi.org/jitsi-key.gpg.key | apt-key add - \
- && echo 'deb http://download.jitsi.org stable/' >> /etc/apt/sources.list \
+ && echo 'deb https://download.jitsi.org unstable/' > /etc/apt/sources.list.d/jitsi-unstable.list \
  && apt-get -y update \
  && apt-get -y install jitsi-meet
 
